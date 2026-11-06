@@ -595,3 +595,46 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .search-box,.directory-panel .patient-avatar { transition: none !important; }
 }
+
+
+.directory-insights {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 10px;
+  padding: 14px 18px 0;
+}
+.directory-insight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+  padding: 11px 13px;
+  border: 1px solid rgba(255,255,255,.96);
+  border-radius: 12px;
+  background: linear-gradient(120deg,rgba(255,255,255,.72),rgba(231,245,237,.48));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.9),0 5px 15px rgba(31,75,59,.035);
+}
+.directory-insight span {
+  overflow: hidden;
+  color: #7b8d83;
+  font-size: 9px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.directory-insight b {
+  flex: 0 0 auto;
+  color: #285b43;
+  font-size: 17px;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+@media(max-width:640px) {
+  .directory-insights {
+    grid-template-columns: 1fr;
+    gap: 7px;
+    padding: 12px 13px 0;
+  }
+  .directory-insight { padding: 9px 11px; }
+}
