@@ -149,6 +149,7 @@ function App() {
     <main className="main-shell">
       <header className="topbar"><button className="menu-button" onClick={() => setMobileNav(true)}><Menu size={20}/></button><div className="breadcrumb">HIM <span>/</span> <b>{visibleNav.find((item) => item.id === page)?.label}</b></div><div className="top-actions"><button className={`status-pill ${online ? 'online' : 'offline'}`} title="Toggle simulated connectivity" onClick={() => setOnline((current) => !current)}><span className="status-dot"/>{online ? 'Online' : 'Offline'}</button><span className="login-chip"><CircleUserRound size={16}/>{user.role === 'super_admin' ? 'Administrator' : 'Health worker'}</span><button className="logout-mobile" onClick={logout}><LogOut size={17}/></button></div></header>
       <div className="page-content">
+        <div className="page-view" key={page}>
         {page === 'overview' && <Overview user={user} queueCount={queueCount} online={online} setPage={setPage} />}
         {page === 'patients' && <Patients online={online} notify={setToast} queueTransaction={queueTransaction} />}
         {page === 'encounters' && <Encounters online={online} notify={setToast} queueTransaction={queueTransaction} />}
@@ -156,6 +157,8 @@ function App() {
         {page === 'sync' && <SyncDashboard online={online} count={queueCount} refresh={syncQueue} />}
         {page === 'reports' && <Reports />}
         {page === 'staff' && user.role === 'super_admin' && <Staff />}
+      
+        </div>
       </div>
       <footer className="footer">HIM · Health Information System <span>Confidential patient information</span></footer>
     </main>
