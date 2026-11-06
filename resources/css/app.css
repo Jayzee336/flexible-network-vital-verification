@@ -392,3 +392,206 @@ body {
     backdrop-filter: blur(36px) saturate(190%);
   }
 }
+
+
+/* =========================================================
+   Clinical Glassmorphism 4.0 — dashboard + patient directory
+   Give high-level workspace surfaces a clearer glass hierarchy.
+   Keep patient rows, labels, and form controls high-contrast.
+   ========================================================= */
+.page-heading {
+  align-items: center;
+  margin-bottom: 28px;
+}
+.page-heading h1 {
+  letter-spacing: -1px;
+  font-size: clamp(25px, 2.2vw, 31px);
+}
+.page-heading p {
+  color: #71847a;
+  font-size: 12px;
+}
+.eyebrow {
+  letter-spacing: 1.55px;
+  color: #4f8a70;
+}
+.heading-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+}
+.heading-actions .primary-button,
+.heading-actions .secondary-button {
+  min-height: 39px;
+  border-radius: 10px;
+  padding-inline: 15px;
+}
+.metric-grid {
+  gap: 16px;
+  margin-bottom: 21px;
+}
+.metric-card {
+  min-height: 142px;
+  padding: 17px 18px 16px;
+  border-radius: 19px;
+}
+.metric-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+}
+.metric-value {
+  font-size: 27px;
+  letter-spacing: -.8px;
+}
+.overview-grid {
+  gap: 17px;
+}
+.recent-panel,
+.quick-panel {
+  min-height: 320px;
+  padding: 20px 21px;
+}
+.recent-panel > .panel-heading,
+.quick-panel > .panel-heading {
+  padding-bottom: 16px;
+}
+.welcome-note {
+  margin-top: 18px;
+  padding: 15px 17px;
+  border: 1px solid rgba(255,255,255,.94);
+  border-radius: 15px;
+  background: linear-gradient(115deg,rgba(230,247,237,.82),rgba(255,255,255,.52));
+  -webkit-backdrop-filter: blur(22px) saturate(165%);
+  backdrop-filter: blur(22px) saturate(165%);
+  box-shadow: 0 12px 30px rgba(37,85,61,.055),inset 0 1px 0 rgba(255,255,255,.95);
+}
+.directory-panel {
+  border-radius: 19px;
+  overflow: hidden;
+  background: linear-gradient(145deg,rgba(255,255,255,.82),rgba(239,248,245,.60));
+  border: 1px solid rgba(255,255,255,.98);
+  box-shadow: 0 20px 48px rgba(31,75,59,.085),inset 0 1px 0 #fff;
+}
+.directory-toolbar {
+  min-height: 69px;
+  padding: 15px 19px;
+  gap: 14px;
+  background: linear-gradient(110deg,rgba(255,255,255,.70),rgba(232,245,239,.52));
+  border-bottom: 1px solid rgba(220,234,225,.85);
+}
+.search-box {
+  max-width: 510px;
+  height: 41px;
+  border-radius: 11px;
+  background: rgba(255,255,255,.76);
+  border: 1px solid rgba(255,255,255,.98);
+  box-shadow: inset 0 1px 2px rgba(27,67,48,.025),0 4px 14px rgba(31,75,59,.035);
+  transition: border-color 180ms ease,box-shadow 180ms ease,background 180ms ease;
+}
+.search-box:focus-within {
+  background: rgba(255,255,255,.96);
+  border-color: rgba(95,169,131,.65);
+  box-shadow: 0 0 0 4px rgba(78,157,116,.11),0 8px 20px rgba(31,75,59,.055);
+}
+.search-box input {
+  font-size: 11px;
+}
+.result-count {
+  margin-left: auto;
+  padding: 7px 11px;
+  border-radius: 20px;
+  color: #4d8067;
+  background: rgba(225,243,233,.78);
+  border: 1px solid rgba(255,255,255,.95);
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.directory-panel .table-wrap {
+  background: rgba(255,255,255,.60);
+}
+.directory-panel table {
+  min-width: 760px;
+}
+.directory-panel th {
+  padding: 14px 17px;
+  color: #71877b;
+  background: rgba(241,248,244,.88);
+  border-bottom-color: rgba(218,232,222,.9);
+  font-size: 8px;
+  letter-spacing: .9px;
+}
+.directory-panel td {
+  padding: 14px 17px;
+  border-bottom-color: rgba(231,239,234,.86);
+  font-size: 10px;
+}
+.directory-panel tbody tr {
+  background: rgba(255,255,255,.52);
+}
+.directory-panel tbody tr:hover {
+  background: rgba(235,247,239,.78);
+}
+.directory-panel .table-person b {
+  color: #2e493b;
+  font-size: 11px;
+}
+.directory-panel .table-person small {
+  text-transform: capitalize;
+}
+.directory-panel .patient-avatar {
+  width: 35px;
+  height: 35px;
+  border: 1px solid rgba(255,255,255,.95);
+  box-shadow: 0 3px 10px rgba(31,75,59,.07);
+}
+.directory-panel .icon-button {
+  border: 1px solid transparent;
+}
+.directory-panel .icon-button:hover {
+  border-color: rgba(255,255,255,.95);
+  box-shadow: 0 4px 12px rgba(31,75,59,.07);
+}
+.empty-state {
+  min-height: 250px;
+}
+@media (hover:hover) and (prefers-reduced-motion:no-preference) {
+  .directory-panel .patient-avatar {
+    transition: transform 180ms ease,box-shadow 180ms ease;
+  }
+  .directory-panel tbody tr:hover .patient-avatar {
+    transform: scale(1.06);
+    box-shadow: 0 5px 14px rgba(31,75,59,.11);
+  }
+}
+@media (max-width: 900px) {
+  .metric-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .overview-grid { grid-template-columns: 1fr; }
+  .recent-panel,.quick-panel { min-height: auto; }
+}
+@media (max-width: 640px) {
+  .page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .heading-actions {
+    width: 100%;
+    justify-content: stretch;
+  }
+  .heading-actions > button { flex: 1; }
+  .directory-toolbar {
+    align-items: stretch;
+    flex-wrap: wrap;
+    padding: 13px;
+  }
+  .search-box { max-width: none; flex-basis: 100%; }
+  .result-count { margin-left: 0; }
+  .metric-card { min-height: 126px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .search-box,.directory-panel .patient-avatar { transition: none !important; }
+}
